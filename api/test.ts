@@ -11,7 +11,9 @@ export default function () {
 			children: "Hello, World",
 			style: {
 				backgroundColor: "black",
-				color: "white"
+				color: "white",
+				width: "100%",
+				height: "100%",
 			}
 		}
 	}, { width: 500, height: 500 });
