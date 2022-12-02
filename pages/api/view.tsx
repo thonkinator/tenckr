@@ -6,11 +6,16 @@ export const config = {
 };
 
 export default function (req: NextRequest) {
+	if (!req.nextUrl.searchParams.get("str")?.startsWith("view"))
+		return Response.redirect("https://patrick.miranda.org", 308);
+
+	const str = req.nextUrl.searchParams.get("str")?.slice(4);
+
 	return new ImageResponse(
 		(
 			<div
 				style={{
-					fontSize: 64,
+					fontSize: 48,
 					color: "white",
 					width: "100%",
 					height: "100%",
@@ -20,7 +25,7 @@ export default function (req: NextRequest) {
 					justifyContent: "center",
 				}}
 			>
-				{req.nextUrl.searchParams.get("str")?.slice(4)}
+				{str}
 			</div>
 		),
 		{

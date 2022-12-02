@@ -6,8 +6,8 @@ const nextConfig = {
 		return {
 			beforeFiles: [
 				{
-					source: "/:str(view.*)*", // this matches anything starting with "view"
-					destination: "/api/view\\?str=:str*"
+					source: "/:str(.*)*", // this matches anything starting with "view"
+					destination: "/api/view\\?str=:str*"//"/api/view\\?str=:str*"
 				},
 			],
 		};
