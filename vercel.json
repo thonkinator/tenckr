@@ -1,6 +1,6 @@
 {
 	"rewrites": [
-		{ "source": "/view:str*", "destination": "/api/view?str=:str*" }
+		{ "source": "/view/:str*", "destination": "/api/view?str=:str*" }
 	],
 	"redirects": [
 		{ "source": "/", "destination": "https://patrick.miranda.org" },
