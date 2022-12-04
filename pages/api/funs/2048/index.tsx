@@ -17,7 +17,7 @@ function Score(props: { label: string; score: number }) {
 				backgroundColor: "#bbada0",
 				color: "white",
 				height: "54px",
-				fontSize: "25px",
+				fontSize: "28px",
 				borderRadius: "3px",
 				display: "flex",
 				flexDirection: "column",
@@ -31,7 +31,7 @@ function Score(props: { label: string; score: number }) {
 			<span
 				style={{
 					color: "#eee4da",
-					fontSize: "13px",
+					fontSize: "15px",
 					margin: "0 -25px",
 				}}
 			>
@@ -172,7 +172,7 @@ export async function handle(str: string) {
 					backgroundColor: "#faf8ef",
 					color: "#776e65",
 					fontFamily: "Clear Sans",
-					fontSize: "25px",
+					fontSize: "28px",
 					padding: "0 18px",
 					borderRadius: "12px",
 				}}
@@ -275,7 +275,7 @@ export async function handle(str: string) {
 			</div>
 		),
 		{
-			width: Math.ceil(800 * SCALE),
+			width: Math.ceil(824 * SCALE),
 			height: Math.ceil(630 * SCALE),
 			// debug: true,
 			fonts: [
