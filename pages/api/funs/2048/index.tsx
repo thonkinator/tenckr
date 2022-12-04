@@ -172,7 +172,7 @@ export async function handle(str: string) {
 					backgroundColor: "#faf8ef",
 					color: "#776e65",
 					fontFamily: "Clear Sans",
-					fontSize: "18px",
+					fontSize: "25px",
 					padding: "0 18px",
 					borderRadius: "12px",
 				}}
@@ -275,7 +275,7 @@ export async function handle(str: string) {
 			</div>
 		),
 		{
-			width: Math.ceil(750 * SCALE),
+			width: Math.ceil(800 * SCALE),
 			height: Math.ceil(630 * SCALE),
 			// debug: true,
 			fonts: [
