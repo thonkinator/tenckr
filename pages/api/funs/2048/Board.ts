@@ -76,7 +76,6 @@ export class Board {
 			.filter(({ v }) => v == 0);
 		const tile = openTiles[Math.floor(this.rng() * openTiles.length)];
 		this.tiles[tile.x][tile.y] = this.rng() > 0.9 ? 4 : 2;
-		console.log(openTiles);
 	}
 
 	move(direction: Directions) {
