@@ -33,6 +33,7 @@ function Score(props: { label: string; score: number }) {
 					color: "#eee4da",
 					fontSize: "15px",
 					margin: "0 -25px",
+					paddingBottom: "2px",
 				}}
 			>
 				{props.label}
