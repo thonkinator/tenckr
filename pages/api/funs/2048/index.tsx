@@ -8,6 +8,8 @@ const fontBoldFetch = fetch(new URL("./clear-sans/ClearSans-Bold.ttf", import.me
 	(res) => res.arrayBuffer()
 );
 
+const SCALE = 1.25;
+
 function Score(props: { label: string; score: number }) {
 	return (
 		<div
@@ -157,8 +159,10 @@ export async function handle(str: string) {
 		(
 			<div
 				style={{
-					width: "100%",
-					height: "100%",
+					width: `${100 / SCALE}%`,
+					height: `${100 / SCALE}%`,
+					transform: `scale(${SCALE})`,
+					margin: "auto",
 					display: "flex",
 					flexDirection: "column",
 					backgroundColor: "#faf8ef",
@@ -223,8 +227,8 @@ export async function handle(str: string) {
 			</div>
 		),
 		{
-			width: 536,
-			height: 800,
+			width: 536 * SCALE,
+			height: 800 * SCALE,
 			// debug: true,
 			fonts: [
 				{
