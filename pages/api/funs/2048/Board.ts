@@ -53,22 +53,20 @@ export class Board {
 
 	merge() {
 		this.tiles = this.tiles.map((col) =>
-			col
-				.reverse()
-				.map((v, i, arr) => {
-					if (v && arr[i + 1] == v) {
-						arr[i + 1] = 0;
-						this.score += v * 2;
-						return v * 2;
-					}
-					return v;
-				})
-				.reverse()
+			col.map((v, i, arr) => {
+				if (v && arr[i + 1] == v) {
+					arr[i + 1] = 0;
+					this.score += v * 2;
+					return v * 2;
+				}
+				return v;
+			})
 		);
 	}
 
 	spawnTile() {
-		const openTiles = this.tiles
+		const openTiles = this.tiles[0]
+			.map((col, i) => this.tiles.map((row) => row[i])) // https://stackoverflow.com/a/46805290
 			.flat()
 			.map((v, i) => ({
 				x: i % this.tiles.length,
@@ -78,6 +76,7 @@ export class Board {
 			.filter(({ v }) => v == 0);
 		const tile = openTiles[Math.floor(this.rng() * openTiles.length)];
 		this.tiles[tile.x][tile.y] = this.rng() > 0.9 ? 4 : 2;
+		console.log(openTiles);
 	}
 
 	move(direction: Directions) {
