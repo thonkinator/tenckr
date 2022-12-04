@@ -8,7 +8,7 @@ const fontBoldFetch = fetch(new URL("./clear-sans/ClearSans-Bold.ttf", import.me
 	(res) => res.arrayBuffer()
 );
 
-const SCALE = 1.25;
+const SCALE = 2;
 
 function Score(props: { label: string; score: number }) {
 	return (
