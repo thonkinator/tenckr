@@ -139,6 +139,10 @@ function Tile(props: { number: number }) {
 	);
 }
 
+function Bold({ children, left = true }: { children?: React.ReactNode; left?: boolean }) {
+	return <b style={left ? { padding: "0 0.275em" } : { paddingRight: "0.275em" }}>{children}</b>;
+}
+
 export async function handle(str: string) {
 	const board = new Board(4, 4, str.match(/^2048[udlr]*(.*)$/m)![1] + "seed");
 	str
@@ -202,7 +206,7 @@ export async function handle(str: string) {
 				</header>
 				<section>
 					Join the numbers and get to the
-					<b style={{ paddingLeft: "0.275em" }}>2048 tile!</b>
+					<Bold>2048 tile!</Bold>
 				</section>
 				<main
 					style={{
@@ -210,7 +214,7 @@ export async function handle(str: string) {
 						height: "500px",
 						backgroundColor: "#bbada0",
 						borderRadius: "6px",
-						marginTop: "20px",
+						margin: "18px 0",
 						display: "flex",
 						flexWrap: "wrap",
 						padding: "7.5px",
@@ -224,6 +228,35 @@ export async function handle(str: string) {
 						<Tile number={v} key={i}></Tile>
 					))}
 				</main>
+				<footer
+					style={{
+						display: "flex",
+						flexDirection: "column",
+					}}
+				>
+					<Bold left={false}>Controls:</Bold>
+					<ul
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							marginTop: "0.3em",
+							marginLeft: "0.3em",
+						}}
+					>
+						<li>
+							Up:<Bold>s/8/8u</Bold>
+						</li>
+						<li>
+							Down:<Bold>s/8/8d</Bold>
+						</li>
+						<li>
+							Left:<Bold>s/8/8l</Bold>
+						</li>
+						<li>
+							Right:<Bold>s/8/8r</Bold>
+						</li>
+					</ul>
+				</footer>
 			</div>
 		),
 		{
