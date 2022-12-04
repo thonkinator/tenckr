@@ -276,7 +276,7 @@ export async function handle(str: string) {
 			</div>
 		),
 		{
-			width: Math.ceil(824 * SCALE),
+			width: Math.ceil(825 * SCALE),
 			height: Math.ceil(630 * SCALE),
 			// debug: true,
 			fonts: [
