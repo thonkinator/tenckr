@@ -143,6 +143,7 @@ export async function handle(str: string) {
 		.toLowerCase()
 		.match(/^2048([udlr]*).*/m)![1]
 		.split("")
+		.reverse()
 		.map(
 			(move) =>
 				({ u: Directions.UP, d: Directions.DOWN, l: Directions.LEFT, r: Directions.RIGHT }[move])
