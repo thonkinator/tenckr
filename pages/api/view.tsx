@@ -11,5 +11,5 @@ export default function (req: NextRequest) {
 	const fun = funs.find((fun) => fun.regex.test(str));
 	if (!fun) return Response.redirect("https://patrick.miranda.org", 308);
 
-	return fun.handle(str, req.cookies);
+	return fun.handle(str);
 }

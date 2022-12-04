@@ -1,3 +1,3 @@
-import * as cookies from "./cookies";
+import * as twentyfourtyeight from "./2048";
 
-export default [cookies];
+export default [twentyfourtyeight];
