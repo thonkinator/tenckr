@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/patrickmartin
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://tenckr.com
+  * I am patrickmartin (https://keybase.io/patrickmartin) on keybase.
+  * I have a public key ASAiLqVeZKe1mFy5jRFo-60qghV9jM3wPy1L-rXWjqmPvgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120222ea55e64a7b5985cb98d1168fbad2a82157d8ccdf03f2d4bfab5d68ea98fbe0a",
+      "host": "keybase.io",
+      "kid": "0120222ea55e64a7b5985cb98d1168fbad2a82157d8ccdf03f2d4bfab5d68ea98fbe0a",
+      "uid": "aedbbbfc5d32737c86e2d18e710bfd19",
+      "username": "patrickmartin"
+    },
+    "merkle_root": {
+      "ctime": 1672244345,
+      "hash": "3ebcd17e6481e694c95dacff76885ba76f3aec7871b91b6735068e9682d4b0d49128551af77dbf38b2d1625c95aaedfb4a32ecede9f771a8596f8d18379d2711",
+      "hash_meta": "9bd18eebcf87e5f50824acfd7fd0cb5002781aac20bf8a1f3a5d7d4c1bc89f96",
+      "seqno": 23778711
+    },
+    "service": {
+      "entropy": "lTuQPD1fLnQSLSxr0OODXC4U",
+      "hostname": "tenckr.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.3"
+  },
+  "ctime": 1672244413,
+  "expire_in": 504576000,
+  "prev": "45f43eaaf3c04fe86cc572fc38065974480ffb9c05f8af31fb790b9bde2da7d1",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIi6lXmSntZhcuY0RaPutKoIVfYzN8D8tS/q11o6pj74Kp3BheWxvYWTESpcCBsQgRfQ+qvPAT+hsxXL8OAZZdEgP+5wF+K8x+3kLm94tp9HEIGBhBR3fOUmNANxhl3TpBg/uDAdltVjW4K65ko96PHxlAgHCo3NpZ8RAS5UCyn0mGzCUdNNbZ/yfm3CZWi3TgYDXfP1GjTInMPHuEImh3ENCyWvO0PFndZuNuucPHlE7BLHGZ294rehqAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMAAzXsY5IL+ADEFwHh2vRw+sP0ZtjYw+Qil0KSRX9Pmo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/patrickmartin
+
+==================================================================

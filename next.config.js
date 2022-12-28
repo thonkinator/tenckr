@@ -7,7 +7,7 @@ const nextConfig = {
 			beforeFiles: [
 				{
 					source: "/:str(.*)*", // this matches anything starting with "view"
-					destination: "/api/view\\?str=:str*"//"/api/view\\?str=:str*"
+					destination: "/api?str=:str*", //"/api/view\\?str=:str*"
 				},
 			],
 		};
@@ -18,7 +18,7 @@ const nextConfig = {
 				source: "/api/:endpoint*", // any requests to an /api/ endpoint
 				destination: "/:endpoint*", // redirect to the root
 				permanent: true,
-			}
+			},
 		];
 	},
 };

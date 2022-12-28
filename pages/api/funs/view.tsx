@@ -25,4 +25,4 @@ export function handle() {
 	);
 }
 
-export const regex: RegExp = /^view.*/gm;
+export const regex = /^view.*/gm;

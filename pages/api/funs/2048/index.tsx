@@ -300,4 +300,4 @@ export async function handle(str: string) {
 	);
 }
 
-export const regex: RegExp = /^2048.*/gm;
+export const regex = /^2048.*/gm;

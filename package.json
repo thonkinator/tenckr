@@ -14,6 +14,7 @@
 		"@types/react": "18.0.25",
 		"@types/react-dom": "18.0.9",
 		"@vercel/og": "^0.0.21",
+		"chess.js": "^1.0.0-alpha.0",
 		"next": "13.0.5",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
