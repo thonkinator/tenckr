@@ -4,7 +4,7 @@ const nextConfig = {
 	swcMinify: true,
 	rewrites: async () => {
 		return {
-			beforeFiles: [
+			afterFiles: [
 				{
 					source: "/:str(.*)*", // this matches anything starting with "view"
 					destination: "/api?str=:str*", //"/api/view\\?str=:str*"
