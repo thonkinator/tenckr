@@ -14,8 +14,6 @@ export class Board {
 
 	constructor(w: number = 4, h: number = 4, seed: string = Math.random().toString()) {
 		this.tiles = Array.from({ length: w }, (e) => Array(h).fill(0));
-		// @types/seedrandom thinks alea isn't a constructor? https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/63471
-		// @ts-ignore
 		this.rng = new alea(seed);
 		this.spawnTile();
 		this.spawnTile();

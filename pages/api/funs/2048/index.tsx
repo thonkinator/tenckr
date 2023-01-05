@@ -160,141 +160,160 @@ export async function handle(str: string) {
 	const fontNormal = await fontNormalFetch;
 	const fontBold = await fontBoldFetch;
 
-	return new ImageResponse(
-		(
-			<div
-				style={{
-					width: `${Math.floor(100 / SCALE)}%`,
-					height: `${Math.floor(100 / SCALE)}%`,
-					transform: `scale(${SCALE})`,
-					margin: "auto",
-					display: "flex",
-					flexDirection: "row",
-					backgroundColor: "#faf8ef",
-					color: "#776e65",
-					fontFamily: "Clear Sans",
-					fontSize: "28px",
-					padding: "0 18px",
-					borderRadius: "12px",
-				}}
-			>
+	const image = await (
+		new ImageResponse(
+			(
 				<div
 					style={{
+						width: `${Math.floor(100 / SCALE)}%`,
+						height: `${Math.floor(100 / SCALE)}%`,
+						transform: `scale(${SCALE})`,
+						margin: "auto",
 						display: "flex",
-						flexDirection: "column",
-					}}
-				>
-					<header
-						style={{
-							fontSize: "68px",
-							fontWeight: "bold",
-							display: "flex",
-							flexDirection: "row",
-							alignItems: "center",
-							width: "100%",
-						}}
-					>
-						<h1
-							style={{
-								margin: "0",
-							}}
-						>
-							2048
-						</h1>
-						<div
-							style={{
-								display: "flex",
-								marginLeft: "auto",
-							}}
-						>
-							<Score label="SCORE" score={board.score}></Score>
-							{/* <Score label="BEST" score={0}></Score> */}
-						</div>
-					</header>
-					<main
-						style={{
-							width: "500px",
-							height: "500px",
-							backgroundColor: "#bbada0",
-							borderRadius: "6px",
-							margin: "18px 0",
-							display: "flex",
-							flexWrap: "wrap",
-							padding: "7.5px",
-						}}
-					>
-						{[
-							...board.tiles
-								.map((col, i) => board.tiles.map((row) => row[i])) // https://stackoverflow.com/a/46805290
-								.flat(),
-						].map((v, i) => (
-							<Tile number={v} key={i}></Tile>
-						))}
-					</main>
-				</div>
-				<aside
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						paddingTop: "18px",
-						paddingLeft: "18px",
+						flexDirection: "row",
+						backgroundColor: "#faf8ef",
+						color: "#776e65",
+						fontFamily: "Clear Sans",
+						fontSize: "28px",
+						padding: "0 18px",
+						borderRadius: "12px",
 					}}
 				>
 					<div
 						style={{
 							display: "flex",
+							flexDirection: "column",
 						}}
 					>
-						Join the numbers and
+						<header
+							style={{
+								fontSize: "68px",
+								fontWeight: "bold",
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "center",
+								width: "100%",
+							}}
+						>
+							<h1
+								style={{
+									margin: "0",
+								}}
+							>
+								2048
+							</h1>
+							<div
+								style={{
+									display: "flex",
+									marginLeft: "auto",
+								}}
+							>
+								<Score label="SCORE" score={board.score}></Score>
+								{/* <Score label="BEST" score={0}></Score> */}
+							</div>
+						</header>
+						<main
+							style={{
+								width: "500px",
+								height: "500px",
+								backgroundColor: "#bbada0",
+								borderRadius: "6px",
+								margin: "18px 0",
+								display: "flex",
+								flexWrap: "wrap",
+								padding: "7.5px",
+							}}
+						>
+							{[
+								...board.tiles
+									.map((col, i) => board.tiles.map((row) => row[i])) // https://stackoverflow.com/a/46805290
+									.flat(),
+							].map((v, i) => (
+								<Tile number={v} key={i}></Tile>
+							))}
+						</main>
 					</div>
-					<div style={{ display: "flex", marginBottom: "20px" }}>
-						get to the <Bold>2048 tile!</Bold>
-					</div>
-					<Bold left={false}>Controls:</Bold>
-					<ul
+					<aside
 						style={{
 							display: "flex",
 							flexDirection: "column",
-							marginTop: "0.3em",
-							marginLeft: "0.3em",
+							paddingTop: "18px",
+							paddingLeft: "18px",
 						}}
 					>
-						<li>
-							Up:<Bold>s/8/8u</Bold>
-						</li>
-						<li>
-							Down:<Bold>s/8/8d</Bold>
-						</li>
-						<li>
-							Left:<Bold>s/8/8l</Bold>
-						</li>
-						<li>
-							Right:<Bold>s/8/8r</Bold>
-						</li>
-					</ul>
-				</aside>
-			</div>
-		),
+						<div
+							style={{
+								display: "flex",
+							}}
+						>
+							Join the numbers and
+						</div>
+						<div style={{ display: "flex", marginBottom: "20px" }}>
+							get to the <Bold>2048 tile!</Bold>
+						</div>
+						<Bold left={false}>Controls:</Bold>
+						<ul
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								marginTop: "0.3em",
+								marginLeft: "0.3em",
+							}}
+						>
+							<li>
+								Up:<Bold>s/8/8u</Bold>
+							</li>
+							<li>
+								Down:<Bold>s/8/8d</Bold>
+							</li>
+							<li>
+								Left:<Bold>s/8/8l</Bold>
+							</li>
+							<li>
+								Right:<Bold>s/8/8r</Bold>
+							</li>
+						</ul>
+					</aside>
+				</div>
+			),
+			{
+				width: Math.ceil(825 * SCALE),
+				height: Math.ceil(630 * SCALE),
+				// debug: true,
+				fonts: [
+					{
+						name: "Clear Sans",
+						data: fontNormal,
+						style: "normal",
+						weight: 400,
+					},
+					{
+						name: "Clear Sans",
+						data: fontBold,
+						style: "normal",
+						weight: 700,
+					},
+				],
+				headers: {
+					"Cache-Control": "no-store",
+				},
+			}
+		) as Response
+	).arrayBuffer();
+	const uri = "data:image/png;base64," + btoa(String.fromCharCode(...new Uint8Array(image)));
+	return new Response(
+		`
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<meta property="og:title" content="2048">
+				<meta property="og:image" content="${uri}">
+			</head>
+		</html
+	`,
 		{
-			width: Math.ceil(825 * SCALE),
-			height: Math.ceil(630 * SCALE),
-			// debug: true,
-			fonts: [
-				{
-					name: "Clear Sans",
-					data: fontNormal,
-					style: "normal",
-					weight: 400,
-				},
-				{
-					name: "Clear Sans",
-					data: fontBold,
-					style: "normal",
-					weight: 700,
-				},
-			],
 			headers: {
-				"Cache-Control": "no-store",
+				"Content-Type": "text/html",
 			},
 		}
 	);
