@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import * as twentyfourtyeight from "./funs/2048";
-import * as twentyfourtyeightimg from "./funs/2048img";
+import * as twentyfourtyeightimg from "./funs/img2048";
 import * as view from "./funs/view";
 const funs = [twentyfourtyeightimg, twentyfourtyeight, view];
 

@@ -293,4 +293,4 @@ export async function handle(str: string) {
 	);
 }
 
-export const regex = /^2048img.*/gm;
+export const regex = /^img2048.*/gm;
