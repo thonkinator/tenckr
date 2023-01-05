@@ -145,6 +145,7 @@ function Bold({ children, left = true }: { children?: React.ReactNode; left?: bo
 }
 
 export async function handle(str: string) {
+	console.log(str);
 	const args = str.slice(7).split("&");
 	const tiles = JSON.parse(decodeURIComponent(args[0])) as number[][];
 	const score = Number(args[1]);
