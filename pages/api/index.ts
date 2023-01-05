@@ -1,7 +1,8 @@
 import { NextRequest } from "next/server";
 import * as twentyfourtyeight from "./funs/2048";
+import * as twentyfourtyeightimg from "./funs/2048img";
 import * as view from "./funs/view";
-const funs = [twentyfourtyeight, view];
+const funs = [twentyfourtyeightimg, twentyfourtyeight, view];
 
 export const config = {
 	runtime: "experimental-edge",
