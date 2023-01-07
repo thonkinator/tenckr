@@ -1,3 +1,5 @@
+### Notice: Tenckr is down right now as I am migrating it to Netlify.
+
 Tenckr
 ---
 discord shenanigans
